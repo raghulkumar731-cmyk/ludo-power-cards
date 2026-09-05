@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.raghulkumar731_cmyk.twa",
+        "sha256_cert_fingerprints": ["79:B1:52:C0:F8:1E:66:C3:AB:37:FC:F1:FD:98:91:98:F8:D0:44:DE:81:34:42:C9:2A:95:8C:4E:8B:84:B1:8A"]
+      }
+    }]
