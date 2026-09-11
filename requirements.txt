@@ -1,0 +1,8 @@
+# Extra dependencies for backend_server.py, on top of TripoSR's own requirements.txt
+# (installed first per the README: pip install -r requirements.txt inside the TripoSR clone).
+# Install this one second: pip install -r /path/to/this/requirements.txt
+
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+Pillow>=10.0
