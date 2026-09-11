@@ -1,0 +1,9 @@
+# Install TripoSR's own requirements.txt FIRST (from inside the cloned
+# https://github.com/VAST-AI-Research/TripoSR repo) — that pulls in torch,
+# rembg, and the tsr package itself. This file only adds what the API layer
+# needs on top of that.
+
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+Pillow>=10.0
