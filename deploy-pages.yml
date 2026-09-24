@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+# Runs on every push to main. Adjust the branch name if yours is different.
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # lets you trigger a redeploy manually from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; a new push cancels an in-progress one.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path to the folder that contains index.html. "." means repo root —
+          # change this to "./docs" or "./public" if that's where your HTML lives.
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
